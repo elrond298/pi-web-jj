@@ -1,0 +1,31 @@
+{
+  "name": "pi-web-jj",
+  "version": "0.1.0",
+  "description": "Jujutsu (jj) workspace provider and Changes panel for PI WEB: dual-entry PI WEB plugin (browser API v2, server API v1).",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "piWeb": {
+    "plugins": [
+      {
+        "id": "jj",
+        "browserRoot": "dist/browser",
+        "module": "dist/browser/pi-web-plugin.js",
+        "serverModule": "dist/server-plugin.js",
+        "machineSpecific": true
+      }
+    ]
+  },
+  "devDependencies": {
+    "@jmfederico/pi-web": "^1.202608.1",
+    "@types/node": "^24.13.3",
+    "happy-dom": "^20.11.1",
+    "lit": "^3.3.3",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  }
+}
